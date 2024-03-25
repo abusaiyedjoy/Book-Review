@@ -15,7 +15,7 @@ const navbar = () => {
                     <Link to="/Pages to Read">Pages to Read</Link>
                     </div>
                 </div>
-                <a className=" text-3xl font-bold lg:text-4xl">Book Vibe</a>
+                <a className=" text-2xl font-bold lg:text-4xl">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex menu menu-horizontal text-xl gap-6 font-medium px-1">
                 <Link to="/">Home</Link>
