@@ -1,9 +1,10 @@
 import React from 'react';
 import { IoStarHalf } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 const BooksCard = ({ item }) => {
-    const { author, category, bookName, image, rating, tags } = item || {};
+    const { bookId, author, category, bookName, image, rating, tags } = item || {};
     return (
-        <div>
+        <Link to={`/card Details/${bookId}`}>
             <div className=" p-6 border border-gray-300 rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-900">
                 <div className='flex justify-center h-64 items-center py-8 w-full rounded-lg bg-[#F3F3F3]'>
                     <img src={image} alt="" className="object-cover object-center  " />
@@ -29,7 +30,7 @@ const BooksCard = ({ item }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

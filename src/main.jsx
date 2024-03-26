@@ -11,6 +11,7 @@ import "./index.css";
 import Listed_Books from './Home/Listed-Books';
 import Pages_to_Read from "./Home/Pages_to_Read";
 import Container from './Container/container';
+import CardDetails from './Components/cardDetails';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/Pages to Read",
         element:<Pages_to_Read></Pages_to_Read> ,
+      },
+      {
+        path: "/card Details/:id",
+        element:<CardDetails></CardDetails>
       },
     ],
   },

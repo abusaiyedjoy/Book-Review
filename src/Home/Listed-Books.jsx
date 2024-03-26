@@ -1,10 +1,7 @@
 import React from 'react';
-
 const Listed_Books = () => {
     return (
-        <div>
-            <h1>This is listed books</h1>
-        </div>
+        <h1>This is listed books.</h1>
     );
 };
 
