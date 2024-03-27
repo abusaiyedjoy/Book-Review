@@ -1,36 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import jsonData from './jsonData';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
-// import { saveToLocalStorage } from '../Utilities/Utility';
-const cardDetails = () => {
-    const donatedData = useLoaderData()
-    const { id } = useParams()
-    const clickedData = donatedData?.find(donatedOne => donatedOne.bookId == id); 
-    const { author, yearOfPublishing, category, publisher, image, rating, review, tags, totalPages, bookName } = clickedData || {};
+import React from 'react';
 
-    const handleClicked = () => {
-
-        const donated = []
-        const donatedOne = JSON.parse(localStorage.getItem('donateditem'))
-        if (!donatedOne) {
-            donated.push(clickedData)
-            localStorage.setItem('donateditem', JSON.stringify(donated))
-            alert("Added successfully")
-        } else {
-            const isExist = donatedOne.find(item => item.bookId == id)
-            if (isExist) {
-                return alert("Already data ase")
-            } else {
-                donated.push(...donatedOne, clickedData)
-                localStorage.setItem('donateditem', JSON.stringify(donated))
-                alert(" Finaly Added successfully");
-            }
-
-        }
-    }
-
+const ReadItems = ({data}) => {
+    console.log(data)
     return (
-        <div className="mt-12">
+        <div className="mt-12 h-[400px] w-full">
             <div className="container grid grid-cols-12 mx-auto">
                 <div className="flex flex-col justify-center rounded-xl col-span-12 align-middle bg-[#F3F3F3] bg-no-repeat bg-cover lg:col-span-6 lg:h-auto">
                     <div className="flex flex-col justify-center items-center p-8 py-12 ">
@@ -79,17 +52,10 @@ const cardDetails = () => {
                                 <span className="font-semibold mr-52">{rating}</span>
                             </div>
                             <div className="flex gap-8">
-                                <Link onClick={handleClicked}class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-cyan-600 transition duration-300 ease-out rounded-lg shadow-xl group hover:ring-1 hover:via-emerald-500">
-                                    <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-500 via-emerald-600 to-green-700"></span>
-                                    <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-green-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-                                    <span class="relative text-white">Read</span>
-                                </Link>
-                                <Link 
-                                // onClick={(e)=> handleReadItem(singleData,e)}
-                                 class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-cyan-600 transition duration-300 ease-out rounded-lg shadow-xl group hover:ring-1 hover:via-emerald-500">
-                                    <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-500 via-emerald-600 to-green-700"></span>
-                                    <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-green-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-                                    <span class="relative text-white">Wishlist</span>
+                                <Link className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-cyan-600 transition duration-300 ease-out rounded-lg shadow-xl group hover:ring-1 hover:via-emerald-500">
+                                    <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-500 via-emerald-600 to-green-700"></span>
+                                    <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-green-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
+                                    <span className="relative text-white">Read</span>
                                 </Link>
                             </div>
                         </div>
@@ -100,4 +66,4 @@ const cardDetails = () => {
     );
 };
 
-export default cardDetails;
+export default ReadItems;
