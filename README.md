@@ -12,3 +12,5 @@ Live link:
 4. When you click read buttons of card details page, this book will be added to the read list tabs in the 2nd manubar of navbar. And the same will work for the wish list button.
 
 5. In the pages to read manubar will be show a bar chart according to read list tabs book item.
+
+6. This website is completely responsive for mibile, tablet, laptop & decstop. 
