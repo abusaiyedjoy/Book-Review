@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ReadItems = ({data}) => {
-    console.log(data)
     return (
         <div className="mt-12 h-[400px] w-full">
             <div className="container grid grid-cols-12 mx-auto">

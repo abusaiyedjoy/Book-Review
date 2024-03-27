@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MdMenuBook } from "react-icons/md";
+import { IoMdContacts } from "react-icons/io";
+import { BsCalendarDate } from "react-icons/bs";
 
-const ReadItems = ({ item }) => {
+const ReadItem = ({ item }) => {
     const { bookId, author, yearOfPublishing, category, publisher, image, rating, tags, totalPages, bookName } = item || {};
     return (
         <div className="mt-12">
@@ -15,28 +18,28 @@ const ReadItems = ({ item }) => {
                     <div className="pt-6 pb-4 space-y-2">
                         <h1 className="text-4xl font-bold">{bookName}</h1>
                         <p className='text-lg font-medium'>{author}</p>
-                        <div className='flex justify-start items-center gap-8 py-3'>
+                        <div className='flex  flex-col md:flex-row justify-start items-start md:items-center gap-8 py-3'>
                             <p>
                                 <span className='font-bold'>Tags:  </span>
                                 {tags && tags.map(tag =>
                                     <a key={tag} className="px-3 py-1 bg-green-100 mr-2 text-center rounded-full text-green-500"> #{tag}</a>
                                 )}
                             </p>
-                            <p>Year of publishing: {yearOfPublishing}</p>
+                            <p className='flex justify-center items-center gap-2  font-medium text-gray-500'><BsCalendarDate /> Year of publishing: {yearOfPublishing}</p>
                         </div>
-                        <div className='flex justify-start items-center gap-6 pb-2'>
-                            <p>Publisher: {publisher}</p>
-                            <p>Pages: {totalPages}</p>
+                        <div className='flex items-start flex-col md:flex-row justify-start md:items-center gap-6 pb-2'>
+                            <p className='flex justify-center items-center gap-2 font-medium text-gray-500'><IoMdContacts /> Publisher: {publisher}</p>
+                            <p className='flex justify-center items-center gap-2 font-medium text-gray-500'><MdMenuBook /> Pages: {totalPages}</p>
                         </div>
                     </div>
-                    <div className="pt-6 pb-4 space-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:grid-cols-3 justify-center items-center pt-6 pb-4 space-y-2">
                         <Link to={`/card Details/${bookId}`}>
 
-                            <span className="px-4 py-2 bg-teal-100 mr-2 text-center rounded-full text-teal-500">Category:{category}</span>
+                            <span className="px-4 py-2 bg-teal-100 text-center rounded-full text-teal-500">Category:{category}</span>
                         </Link>
                         <Link to={`/card Details/${bookId}`}>
 
-                            <span className="px-4 py-2 bg-orange-100 mr-2 text-center rounded-full text-orange-500">Rating:{rating}</span>
+                            <span className="px-4 py-2 bg-orange-100 text-center rounded-full text-orange-500">Rating:{rating}</span>
                         </Link>
                         <Link to={`/card Details/${bookId}`}
                             class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-cyan-600 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:via-emerald-500">
@@ -53,4 +56,4 @@ const ReadItems = ({ item }) => {
     );
 };
 
-export default ReadItems;
+export default ReadItem;
