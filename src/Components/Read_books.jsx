@@ -1,18 +1,33 @@
-// import React from 'react';
-// import useLocalStorage from './useLocalStorage';
-// import ReadItems from './ReadItems';
-
+import { useEffect, useState } from "react";
+import ReadItems from "../Utilities/ReadItems";
 const Read_books = () => {
-    // const {LocalData}=useLocalStorage()
-    // console.log(LocalData)
+    const [display, setDisplay] = useState(4)
+    const [nodonated, setNodonated] = useState('')
+    const items = JSON.parse(localStorage.getItem('donateditem'))
+    useEffect(() => {
+        if (items) {
+            setNodonated(true)
+        } else {
+            setNodonated(false)
+        }
+    }, [items])
     return (
         <div>
-            <h1>cjfhhhhhhhhhhhhhhfgg</h1>
-            {/* {
-                LocalData.map((data)=>(
-                    <ReadItems key={data.id} data={data}></ReadItems>
-                ))
-            } */}
+            <div className={nodonated ? 'grid lg:grid-cols-1 container  md:my-12 lg:my-0 gap-6 mx-auto' : ''}>
+                {
+                    nodonated ? items.slice(0, display).map(item => <ReadItems key={item.id} item={item} ></ReadItems>) : <div>
+                        <h3 className="h-[60vh] font-bold text-3xl flex  justify-center items-center ">No donated Item Found</h3>
+                    </div>
+
+                }
+
+
+            </div>
+            {
+                items?.length?<div className={display === items?.length ||  items?.length <4  ? 'hidden' : 'flex justify-center items-center my-8'}>
+                <button className="btn btn-accent text-white " onClick={() => setDisplay(items?.length)} >Show All </button>
+            </div>:''
+            }
         </div>
     );
 };
