@@ -1,5 +1,5 @@
 import { Link, useLoaderData, useParams } from 'react-router-dom';
-
+import toast from 'react-hot-toast';
 
 const cardDetails = () => {
     const donatedData = useLoaderData()
@@ -15,15 +15,15 @@ const cardDetails = () => {
         if (!donatedOne) {
             donated.push(clickedData)
             localStorage.setItem('wishlist', JSON.stringify(donated))
-            alert("Added successfully")
+            toast.success('Successfully Added in wishlist books')
         } else {
             const isExist = donatedOne.find(item => item.bookId == id)
             if (isExist) {
-                return alert("Already data ase")
+                return toast.error("This book already have in wishlist books tab");
             } else {
                 donated.push(...donatedOne, clickedData)
                 localStorage.setItem('wishlist', JSON.stringify(donated))
-                alert(" Finaly Added successfully");
+                toast.success('Successfully Added in wishlist books');
             }
 
         }
@@ -35,15 +35,15 @@ const cardDetails = () => {
         if (!donatedOne) {
             donated.push(clickedData)
             localStorage.setItem('donateditem', JSON.stringify(donated))
-            alert("Added successfully")
+            toast.success('Successfully Added in read books')
         } else {
             const isExist = donatedOne.find(item => item.bookId == id)
             if (isExist) {
-                return alert("Already data ase")
+                return toast.error("This book already have in read books tab");
             } else {
                 donated.push(...donatedOne, clickedData)
                 localStorage.setItem('donateditem', JSON.stringify(donated))
-                alert(" Finaly Added successfully");
+                toast.success('Successfully Added in read books');
             }
 
         }
@@ -55,15 +55,15 @@ const cardDetails = () => {
         if (!favoriteOne) {
             favorite.push(clickedFavoriteData)
             localStorage.setItem('favorite', JSON.stringify(favorite))
-            alert("Added successfully")
+            toast.success('Successfully Added in favorite books');
         } else {
             const isExist = favoriteOne.find(item => item.bookId == id)
             if (isExist) {
-                return alert("Already data ase")
+                return toast.error("This book already have in my favorite manu bar");
             } else {
                 favorite.push(...favoriteOne, clickedFavoriteData)
                 localStorage.setItem('favorite', JSON.stringify(favorite))
-                alert(" Finaly Added successfully");
+                toast.success('Successfully Added in favorite');
             }
 
         }

@@ -23,7 +23,14 @@ const TriangleBar = (props) => {
 const Pages_to_Read = () => {
 
   const items = JSON.parse(localStorage.getItem('donateditem') || '[]');
-
+  if (items.length === 0) {
+    return <div className="flex flex-col items-center justify-center pt-32">
+      <p className="mb-2 text-2xl font-bold text-center text-green-500 md:text-3xl">Oops!</p>
+      <p className="mb-8 text-center font-medium text-gray-600 md:text-lg">
+        There is no books item in your read books tab.
+      </p>
+    </div>;
+  }
 
   const chartData = items.map((item, index) => ({
     name: item.bookName,
@@ -33,6 +40,9 @@ const Pages_to_Read = () => {
 
   return (
     <div style={{ width: '100%', height: '500px' }}>
+      <div className='rounded-xl my-8 py-3 text-center w-[300px] md:w-[350px] mx-auto bg-[#F3F3F3]'>
+        <h1 className=' text-2xl md:text-3xl font-bold'><i>My read books chart</i></h1>
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={chartData}
