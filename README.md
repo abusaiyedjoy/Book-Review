@@ -1,6 +1,6 @@
 # Book Review
 
-Live link:  
+Live link:  https://book-review-vite.netlify.app/
 
 # Project feature:
 1. This website is dedicated to book review. In the home page of this website you will see a navbar and a banner with a title and a book image. Also you will see some book cards.

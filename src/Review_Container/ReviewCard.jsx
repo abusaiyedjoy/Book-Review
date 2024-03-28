@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { IoStarHalf } from "react-icons/io5";
-import { Link } from 'react-router-dom';
 
 const paragraphStyle = {
     WebkitLineClamp: 3,
