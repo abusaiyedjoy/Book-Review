@@ -5,7 +5,7 @@ import { IoMdContacts } from "react-icons/io";
 import { BsCalendarDate } from "react-icons/bs";
 
 const ReadItem = ({ item }) => {
-    const { bookId, author, yearOfPublishing, category, publisher, image, rating, tags, totalPages, bookName } = item || {};
+    const { bookId, author, yearOfPublishing, publisher, image, totalPages, bookName } = item || {};
     return (
         <div className="mt-12">
             <div className="container border-2 rounded-xl border-gray-200 p-4 mx-auto">

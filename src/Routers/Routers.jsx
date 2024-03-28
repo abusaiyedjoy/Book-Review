@@ -8,6 +8,7 @@ import Read_books from "../Components/Read_books";
 import Wishlist_books from "../Components/Wishlist_books";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Favorite from "../Bookmarks/Favorite";
+import Review_Container from "../Review_Container/Review_Container";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
         {
           path: "/Bookmarks",
           element:<Favorite></Favorite> ,
+        },
+        {
+          path: "/Review_Container",
+          element:<Review_Container></Review_Container> ,
         },
         {
           path: "/card Details/:id",
