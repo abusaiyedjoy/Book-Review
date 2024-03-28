@@ -11,8 +11,8 @@ const paragraphStyle = {
 }
 
 const ReviewCard = ({ item }) => {
-    const { button, setButton } = useState(false);
-    const { bookId, author, review, bookName, image, rating } = item || {};
+    const [ button, setButton ] = useState(false);
+    const {author, review, bookName, image, rating } = item || {};
     return (
         <div>
             <div className="grid grid-cols-12 p-6 border border-gray-300 gap-5 rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-900">
@@ -24,7 +24,7 @@ const ReviewCard = ({ item }) => {
                     <p className="text-gray-800">{author}</p>
                     <hr className='my-4' />
                     <div className="flex justify-start items-center"><h1><span className='font-bold'>Rating:</span> {rating}</h1><IoStarHalf /></div>
-                    <p style={button ? null : paragraphStyle}><span className='font-bold'>Revuew:</span> {review}</p>
+                    <p style={button ? null : paragraphStyle}><span className='font-bold'>Review:</span> {review}</p>
                     <button className='text-green-500 font-medium' onClick={()=> setButton(!button)}>{button ? 'Read less...' : 'Read more...'}</button>
                 </div>
             </div>
