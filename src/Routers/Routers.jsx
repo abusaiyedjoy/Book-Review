@@ -7,6 +7,7 @@ import CardDetails from '../Components/cardDetails'
 import Read_books from "../Components/Read_books";
 import Wishlist_books from "../Components/Wishlist_books";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import Favorite from "../Bookmarks/Favorite";
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         {
           path: "/Pages to Read",
           element:<Pages_to_Read></Pages_to_Read> ,
+        },
+        {
+          path: "/Bookmarks",
+          element:<Favorite></Favorite> ,
         },
         {
           path: "/card Details/:id",

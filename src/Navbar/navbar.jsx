@@ -22,7 +22,7 @@ const navbar = () => {
                 <NavLink to="/" className={({isActive})=> isActive ? 'text-green-700 p-2 ring-1 ring-offset-2 rounded-lg ring-green-700' : ''}>Home</NavLink>
                 <NavLink to="/Listed Books" className={({isActive})=> isActive ? 'text-green-700 p-2 ring-1 ring-offset-2 rounded-lg ring-green-700' : ''}>Listed Books</NavLink>
                 <NavLink to="/Pages to Read" className={({isActive})=> isActive ? 'text-green-700 p-2 ring-1 ring-offset-2 rounded-lg ring-green-700' : ''}>Pages to Read</NavLink>
-                <NavLink to="/Bookmarks" className={({isActive})=> isActive ? 'text-green-700 p-2 ring-1 ring-offset-2 rounded-lg ring-green-700' : ''}>Bookmarks</NavLink>
+                <NavLink to="/Bookmarks" className={({isActive})=> isActive ? 'text-green-700 p-2 ring-1 ring-offset-2 rounded-lg ring-green-700' : ''}>Favorite</NavLink>
             </div>
             <div className="navbar-end gap-5">
                 <Link class="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-cyan-600 transition duration-300 ease-out rounded-lg shadow-xl group hover:ring-1 hover:via-emerald-500">
