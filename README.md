@@ -1,16 +1,42 @@
 # Book Review
 
-Live link:  https://book-review-vite.netlify.app/
+Live link: [Book Review Website](https://book-review-vite.netlify.app/)
 
-# Project feature:
-1. This website is dedicated to book review. In the home page of this website you will see a navbar and a banner with a title and a book image. Also you will see some book cards.
+## Project Features
 
-2. There are five menubars in the middle of navbar and the website title on the left site and two buttons on the right side.
+1. **Dedicated to Book Reviews**:  
+   This website is dedicated to book reviews. On the home page, you will see a navbar and a banner with a title and a book image. Additionally, you will find multiple book cards showcasing book details.
 
-3. If you click any card of home page, you will see card details with two buttons (read & wishlist).
+2. **Navbar with Menus and Buttons**:  
+   The navbar includes five menu items in the middle, the website title on the left side, and two buttons on the right side for user actions.
 
-4. When you click read buttons of card details page, this book will be added to the read list tabs in the 2nd manubar of navbar. And the same will work for the wish list button.
+3. **Interactive Card Details**:  
+   Clicking on any card on the home page will take you to a details page for that book. The details page includes information about the book along with two buttons: **Read** and **Wishlist**.
 
-5. In the pages to read manubar will be show a bar chart according to read list tabs book item.
+4. **Dynamic Read and Wishlist Functionality**:  
+   - When you click the **Read** button on the details page, the book will be added to the **Read List** tab in the second menu of the navbar.  
+   - Similarly, clicking the **Wishlist** button will add the book to the **Wishlist** tab.
 
-6. This website is completely responsive for mibile, tablet, laptop & decstop. 
+5. **Bar Chart Visualization**:  
+   In the **Pages to Read** menu, a bar chart is displayed, showing statistics based on the books in the **Read List** tab.
+
+6. **Responsive Design**:  
+   This website is fully responsive and optimized for mobile phones, tablets, laptops, and desktops.
+
+## Technologies Used
+
+- **React**: For building dynamic and reusable components.
+- **Vite**: A fast and lightweight build tool for modern web development.
+- **Tailwind CSS**: A utility-first CSS framework for responsive and aesthetic design.
+- **Netlify**: For hosting and deployment of the live site.
+
+## How to Run Locally
+
+### Prerequisites
+- Node.js and npm installed on your system.
+
+### Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/abusaiyedjoy/Book-Review.git
